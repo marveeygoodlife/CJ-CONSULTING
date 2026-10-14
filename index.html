@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C'J Consulting Integrated Services | Compliance & Business Advisory Abuja</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="top-info">
+            <div class="top-info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Lifecamp, Abuja, Nigeria</span>
+            </div>
+            <div class="top-info-item">
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:09133968691">09133968691</a>
+            </div>
+            <div class="top-info-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <a href="https://wa.me/2348022692116" target="_blank">08022692116</a>
+            </div>
+        </div>
+        <div class="top-info-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Verified & Licensed Advisory Firm</span>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="navbar">
+        <a href="#" class="brand-logo">
+            <div class="logo-icon">CJ</div>
+            <div class="logo-text">
+                <span class="brand-name">C'J <span>CONSULTING</span></span>
+                <span class="brand-sub">INTEGRATED SERVICES</span>
+            </div>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About Us</a></li>
+            <li><a href="#services" class="nav-link">Our Services</a></li>
+            <li><a href="#why-us" class="nav-link">Why Choose Us</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button class="nav-cta" onclick="openModal('General Consultation')">
+                <i class="fa-solid fa-paper-plane"></i> Get Started
+            </button>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-circle-check"></i> Professional | Reliable | Efficient
+                </div>
+                <h1 class="hero-title">
+                    Get Verified, Stay Legal & <span>Avoid Unnecessary Penalties.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    We help you stay compliant so you can focus on growth. Seamless business registration, tax processing, and corporate advisory services for individuals, SMEs, and corporate bodies.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="openModal('General Legal Inquiry')">
+                        <i class="fa-solid fa-calendar-check"></i> Consult Us Now
+                    </button>
+                    <a href="#services" class="btn-secondary">
+                        <i class="fa-solid fa-list-check"></i> Explore All Services
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Graphic / Flyer Highlight Card -->
+            <div class="flyer-card-preview">
+                <div class="flyer-card-header">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>Your Compliance | Our Priority</h3>
+                </div>
+                <ul class="flyer-features-list">
+                    <li><i class="fa-solid fa-check-double"></i> Fast-Track CAC Registration</li>
+                    <li><i class="fa-solid fa-check-double"></i> SCUML & Anti-Money Laundering</li>
+                    <li><i class="fa-solid fa-check-double"></i> Tax Identification (TIN) & TaxPro Max</li>
+                    <li><i class="fa-solid fa-check-double"></i> Annual Returns & Record Updates</li>
+                    <li><i class="fa-solid fa-check-double"></i> Yearly Financial Audit Statements</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="section-header">
+            <span class="section-subtitle">What We Offer</span>
+            <h2 class="section-title">Our Compliance & Registration Services</h2>
+            <p class="section-desc">Comprehensive solution packages tailored to safeguard and scale your business legally.</p>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="filter-container">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="serviceSearch" placeholder="Search for a service (e.g. CAC, Tax, NGO, Trademark)..." onkeyup="filterServices()">
+            </div>
+            <div class="filter-tags">
+                <button class="filter-btn active" onclick="filterCategory('all', this)">All Services</button>
+                <button class="filter-btn" onclick="filterCategory('cac', this)">CAC & Registration</button>
+                <button class="filter-btn" onclick="filterCategory('tax', this)">Tax & SCUML</button>
+                <button class="filter-btn" onclick="filterCategory('post', this)">Post-Incorporation</button>
+                <button class="filter-btn" onclick="filterCategory('audit', this)">Audit & Financials</button>
+            </div>
+        </div>
+
+        <!-- Dynamic Grid of 16 Services from Flyer -->
+        <div class="services-grid" id="servicesGrid">
+            
+            <!-- 1 -->
+            <div class="service-card" data-category="cac" data-title="cac business name registration">
+                <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
+                <h3>CAC Business Name Registration</h3>
+                <p>Register your business name quickly and easily to obtain official legal identity and open business bank accounts.</p>
+                <button class="service-btn" onclick="openModal('CAC Business Name Registration')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 2 -->
+            <div class="service-card" data-category="cac" data-title="private limited company ltd registration">
+                <div class="service-icon"><i class="fa-solid fa-building font-heading"></i></div>
+                <h3>Private Limited Company (LTD) Registration</h3>
+                <p>Build a solid foundation for your business with official corporate entity setup and shareholding structures.</p>
+                <button class="service-btn" onclick="openModal('Private Limited Company Registration')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 3 -->
+            <div class="service-card" data-category="cac" data-title="incorporated trustees registration ngo church club">
+                <div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
+                <h3>Incorporated Trustees Registration</h3>
+                <p>For NGOs, churches, clubs, associations, and non-profit organizations seeking recognized trustee status.</p>
+                <button class="service-btn" onclick="openModal('Incorporated Trustees Registration')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 4 -->
+            <div class="service-card" data-category="cac" data-title="ngo church mosque club registration">
+                <div class="service-icon"><i class="fa-solid fa-place-of-worship"></i></div>
+                <h3>NGO, Church, Mosque & Club Registration</h3>
+                <p>Get legally recognized and operate freely with proper legal documentation and structural backing.</p>
+                <button class="service-btn" onclick="openModal('NGO/Church/Mosque/Club Registration')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 5 -->
+            <div class="service-card" data-category="cac" data-title="school registration educational institution">
+                <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>School Registration</h3>
+                <p>Establish a credible and fully compliant education institution with official government authorization.</p>
+                <button class="service-btn" onclick="openModal('School Registration')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 6 -->
+            <div class="service-card" data-category="cac" data-title="trademark registration brand protection">
+                <div class="service-icon"><i class="fa-solid fa-trademark"></i></div>
+                <h3>Trademark Registration</h3>
+                <p>Protect your brand name, logo, slogan, and intellectual property from unauthorized usage and infringement.</p>
+                <button class="service-btn" onclick="openModal('Trademark Registration')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 7 -->
+            <div class="service-card" data-category="post" data-title="annual returns filing compliance">
+                <div class="service-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                <h3>Annual Returns Filing</h3>
+                <p>Keep your business active and fully compliant on CAC portal to prevent penalties or de-registration.</p>
+                <button class="service-btn" onclick="openModal('Annual Returns Filing')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 8 -->
+            <div class="service-card" data-category="post" data-title="cac lost document retrieval certificate">
+                <div class="service-icon"><i class="fa-solid fa-file-circle-question"></i></div>
+                <h3>CAC Lost Document Retrieval</h3>
+                <p>Recover your lost CAC certificates, status reports, or incorporation documents hassle-free.</p>
+                <button class="service-btn" onclick="openModal('CAC Lost Document Retrieval')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 9 -->
+            <div class="service-card" data-category="post" data-title="cac record modifications updates directorship address">
+                <div class="service-icon"><i class="fa-solid fa-file-pen"></i></div>
+                <h3>CAC Record Modifications & Updates</h3>
+                <p>Update your business records with ease including changes in directors, address, share capital, or business objects.</p>
+                <button class="service-btn" onclick="openModal('CAC Record Modifications')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 10 -->
+            <div class="service-card" data-category="post" data-title="reactivation of inactive cac status">
+                <div class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                <h3>Reactivation of Inactive CAC Status</h3>
+                <p>Bring your business back to active status on the Corporate Affairs Commission database efficiently.</p>
+                <button class="service-btn" onclick="openModal('Reactivation of Inactive CAC Status')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 11 -->
+            <div class="service-card" data-category="post" data-title="all post-incorporation services">
+                <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+                <h3>All Post-Incorporation Services</h3>
+                <p>From initial registration to full ongoing legal compliance, we handle all your corporate maintenance needs.</p>
+                <button class="service-btn" onclick="openModal('All Post-Incorporation Services')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 12 -->
+            <div class="service-card" data-category="tax" data-title="firs jtb tin processing tax identification number">
+                <div class="service-icon"><i class="fa-solid fa-receipt"></i></div>
+                <h3>FIRS & JTB TIN Processing</h3>
+                <p>Get your official Tax Identification Number (TIN) fast for corporate banking and government tenders.</p>
+                <button class="service-btn" onclick="openModal('FIRS & JTB TIN Processing')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 13 -->
+            <div class="service-card" data-category="tax" data-title="taxpro max registration updates firs">
+                <div class="service-icon"><i class="fa-solid fa-desktop"></i></div>
+                <h3>TaxPro Max Registration & Updates</h3>
+                <p>Seamlessly manage your tax filing obligations, clearance certificates, and portal updates with expertise.</p>
+                <button class="service-btn" onclick="openModal('TaxPro Max Registration')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 14 -->
+            <div class="service-card" data-category="tax" data-title="efcc scumi certificate processing anti money laundering">
+                <div class="service-icon"><i class="fa-solid fa-shield-cat"></i></div>
+                <h3>EFCC SCUML Certificate Processing</h3>
+                <p>Meet your anti-money laundering requirements and secure compulsory SCUML certificates for designated businesses.</p>
+                <button class="service-btn" onclick="openModal('EFCC SCUML Certificate Processing')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 15 -->
+            <div class="service-card" data-category="audit" data-title="audit yearly financial statements bookkeeping">
+                <div class="service-icon"><i class="fa-solid fa-calculator"></i></div>
+                <h3>Audit Yearly Financial Statements</h3>
+                <p>Ensure high accuracy, transparency, and credibility with professionally audited financial statements for tax & banking.</p>
+                <button class="service-btn" onclick="openModal('Audit Yearly Financial Statements')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- 16 -->
+            <div class="service-card" data-category="audit" data-title="contract documents application processing">
+                <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
+                <h3>Contract Documents Application</h3>
+                <p>Get your crucial legal contract documents, regulatory filings, and affidavits processed with complete ease.</p>
+                <button class="service-btn" onclick="openModal('Contract Documents Application')">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="section" id="about" style="background: white;">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="C'J Consulting Corporate Office">
+                <div class="about-experience-badge">
+                    <span>100%</span>
+                    Verified Compliance
+                </div>
+            </div>
+            <div class="about-content">
+                <span class="section-subtitle">About C'J Consulting</span>
+                <h2>Dedicated to Navigating Corporate Governance & Legal Compliance</h2>
+                <p>At <strong>C'J Consulting Integrated Services</strong>, we pride ourselves on being a trusted bridge between business owners and regulatory statutory bodies in Nigeria.</p>
+                <p>Located in Lifecamp, Abuja, our team of dedicated compliance consultants, legal advisory professionals, and tax specialists ensure your organization remains 100% legal, active, and immune to severe statutory penalties.</p>
+                
+                <ul class="about-highlights">
+                    <li><i class="fa-solid fa-shield-check"></i> Licensed experts in Corporate CAC Processing</li>
+                    <li><i class="fa-solid fa-shield-check"></i> Fast turnaround time with transparent tracking</li>
+                    <li><i class="fa-solid fa-shield-check"></i> Personalized advisory for SMEs and Large Corporations</li>
+                </ul>
+
+                <button class="btn-primary" onclick="openModal('About Us Inquiry')">
+                    <i class="fa-solid fa-handshake"></i> Work With Us Today
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Grid -->
+    <section class="section why-us" id="why-us">
+        <div class="section-header">
+            <span class="section-subtitle" style="color: var(--gold-primary);">Our Core Advantages</span>
+            <h2 class="section-title">Why Business Owners Trust C'J Consulting</h2>
+            <p class="section-desc">We deliver fast, verified, and penalty-free legal solutions for every business phase.</p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <i class="fa-solid fa-user-shield"></i>
+                <h3>Trusted & Reliable</h3>
+                <p>We maintain full confidentiality and guarantee authentic documentation registered directly with government portals.</p>
+            </div>
+            <div class="why-card">
+                <i class="fa-solid fa-briefcase"></i>
+                <h3>Professional Service</h3>
+                <p>Experienced practitioners who guide you through complex regulatory requirements without stress.</p>
+            </div>
+            <div class="why-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Fast & Efficient</h3>
+                <p>Streamlined filing procedures designed to get your CAC, SCUML, and TIN processed in record speed.</p>
+            </div>
+            <div class="why-card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Your Success Is Our Priority</h3>
+                <p>We don't just file papers; we build structural compliance so you can bid for contracts and scale freely.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Consultation Section -->
+    <section class="section contact-section" id="contact">
+        <div class="section-header">
+            <span class="section-subtitle">Get In Touch</span>
+            <h2 class="section-title">Start Your Compliance Journey Today</h2>
+            <p class="section-desc">Have questions or need immediate document processing? Reach out to our Abuja team.</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div>
+                    <h3>Contact Information</h3>
+                    <p>Visit our office in Abuja or connect with us directly via phone or WhatsApp for instant support.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-item-text">
+                                <h4>Our Location</h4>
+                                <p>Lifecamp, Abuja, FCT, Nigeria</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="contact-item-text">
+                                <h4>Call / WhatsApp Support</h4>
+                                <p><a href="tel:09133968691">09133968691</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div class="contact-item-text">
+                                <h4>Direct WhatsApp Line</h4>
+                                <p><a href="https://wa.me/2348022692116" target="_blank">08022692116</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <p style="font-size: 0.85rem; color: var(--gold-light);">
+                        <i class="fa-solid fa-clock"></i> Working Hours: Mon - Fri (8:00 AM - 6:00 PM)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="contact-form">
+                <h3>Request Consultation / Call Back</h3>
+                <form id="consultationForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" class="form-control" placeholder="e.g. Chukwuma Adeleke" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNum">Phone Number / WhatsApp *</label>
+                        <input type="tel" id="phoneNum" class="form-control" placeholder="e.g. 08012345678" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceSelect">Service Required *</label>
+                        <select id="serviceSelect" class="form-control" required>
+                            <option value="">-- Select a Service --</option>
+                            <option value="CAC Business Name Registration">CAC Business Name Registration</option>
+                            <option value="Private Limited Company (LTD) Registration">Private Limited Company (LTD) Registration</option>
+                            <option value="Incorporated Trustees Registration">Incorporated Trustees Registration</option>
+                            <option value="NGO, Church, Mosque & Club Registration">NGO, Church, Mosque & Club Registration</option>
+                            <option value="School Registration">School Registration</option>
+                            <option value="Trademark Registration">Trademark Registration</option>
+                            <option value="Annual Returns Filing">Annual Returns Filing</option>
+                            <option value="CAC Lost Document Retrieval">CAC Lost Document Retrieval</option>
+                            <option value="CAC Record Modifications & Updates">CAC Record Modifications & Updates</option>
+                            <option value="Reactivation of Inactive CAC Status">Reactivation of Inactive CAC Status</option>
+                            <option value="All Post-Incorporation Services">All Post-Incorporation Services</option>
+                            <option value="FIRS & JTB TIN Processing">FIRS & JTB TIN Processing</option>
+                            <option value="TaxPro Max Registration & Updates">TaxPro Max Registration & Updates</option>
+                            <option value="EFCC SCUML Certificate Processing">EFCC SCUML Certificate Processing</option>
+                            <option value="Audit Yearly Financial Statements">Audit Yearly Financial Statements</option>
+                            <option value="Contract Documents Application">Contract Documents Application</option>
+                            <option value="General Consultation">Other / General Legal Advisory</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message / Business Details</label>
+                        <textarea id="message" class="form-control" placeholder="Briefly describe what you need assistance with..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fa-brands fa-whatsapp"></i> Submit via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="brand-logo">
+                    <div class="logo-icon">CJ</div>
+                    <div class="logo-text">
+                        <span class="brand-name">C'J <span>CONSULTING</span></span>
+                        <span class="brand-sub">INTEGRATED SERVICES</span>
+                    </div>
+                </a>
+                <p>Your Compliance | Our Priority. We help corporate entities, SMEs, NGOs, and individuals stay completely verified, compliant, and avoid costly regulatory penalties.</p>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#why-us">Why Choose Us</a></li>
+                    <li><a href="#contact">Contact Support</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Popular Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services" onclick="openModal('CAC Business Name Registration')">CAC Registration</a></li>
+                    <li><a href="#services" onclick="openModal('EFCC SCUML Certificate Processing')">EFCC SCUML Certificate</a></li>
+                    <li><a href="#services" onclick="openModal('FIRS & JTB TIN Processing')">TIN Processing</a></li>
+                    <li><a href="#services" onclick="openModal('Annual Returns Filing')">Annual Returns Filing</a></li>
+                    <li><a href="#services" onclick="openModal('Audit Yearly Financial Statements')">Yearly Financial Audit</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Headquarters</h4>
+                <p style="font-size:0.9rem; margin-bottom:10px;"><i class="fa-solid fa-location-dot" style="color:var(--gold-primary);"></i> Lifecamp, Abuja, Nigeria</p>
+                <p style="font-size:0.9rem; margin-bottom:10px;"><i class="fa-solid fa-phone" style="color:var(--gold-primary);"></i> 09133968691</p>
+                <p style="font-size:0.9rem;"><i class="fa-brands fa-whatsapp" style="color:var(--gold-primary);"></i> 08022692116</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span>C'J Consulting Integrated Services</span>. All Rights Reserved.</p>
+            <p>Compliance Today, Greater Tomorrow.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/2349133968691?text=Hello%20C%27J%20Consulting,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="float-btn float-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="float-tooltip">Chat on WhatsApp</span>
+        </a>
+        <a href="tel:09133968691" class="float-btn float-call">
+            <i class="fa-solid fa-phone"></i>
+            <span class="float-tooltip">Call Support</span>
+        </a>
+    </div>
+
+    <!-- Interactive Consultation Modal -->
+    <div class="modal" id="consultationModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <i class="fa-solid fa-file-signature" style="font-size: 2.5rem; color: var(--gold-dark);"></i>
+                <h3 style="font-size: 1.5rem; color: var(--navy-main); margin-top: 10px;" id="modalServiceTitle">Quick Service Request</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Fill in your details below to connect directly with an expert consultant.</p>
+            </div>
+            
+            <form id="modalForm" onsubmit="handleModalSubmit(event)">
+                <div class="form-group">
+                    <label for="modalName">Your Name</label>
+                    <input type="text" id="modalName" class="form-control" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="modalPhone">Phone / WhatsApp Number</label>
+                    <input type="tel" id="modalPhone" class="form-control" required placeholder="Enter phone number">
+                </div>
+                <div class="form-group">
+                    <label for="modalNotes">Additional Details (Optional)</label>
+                    <textarea id="modalNotes" class="form-control" placeholder="Any specific business name or requirements..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Continue on WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
