@@ -98,25 +98,30 @@
         // WhatsApp Form Handler (Contact Section)
         function handleFormSubmit(e) {
             e.preventDefault();
-            const name = document.getElementById('fullName').value;
-            const phone = document.getElementById('phoneNum').value;
-            const service = document.getElementById('serviceSelect').value;
-            const msg = document.getElementById('message').value;
+            const name = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phoneNum').value.trim();
+            const service = document.getElementById('serviceSelect').value.trim();
+            const msg = document.getElementById('message').value.trim();
 
             const whatsappMessage = `*New Consultation Request*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Service:* ${encodeURIComponent(service)}%0A*Details:* ${encodeURIComponent(msg || 'N/A')}`;
             
-            window.open(`https://wa.me/2349133968691?text=${whatsappMessage}`, '_blank');
+            window.open(
+							`https://wa.me/2348022692116?text=${whatsappMessage}`,
+							"_blank",
+						);
         }
 
         // Modal Form Submit Handler
         function handleModalSubmit(e) {
             e.preventDefault();
-            const name = document.getElementById('modalName').value;
-            const phone = document.getElementById('modalPhone').value;
-            const notes = document.getElementById('modalNotes').value;
+            const name = document.getElementById('modalName').value.trim();
+            const phone = document.getElementById('modalPhone').value.trim();
+            const notes = document.getElementById('modalNotes').value.trim();
 
             const whatsappMessage = `*Service Inquiry: ${encodeURIComponent(currentModalService)}*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Notes:* ${encodeURIComponent(notes || 'N/A')}`;
 
             closeModal();
             window.open(`https://wa.me/2348022692116?text=${whatsappMessage}`, '_blank');
         }
+
+        /* form validation */
