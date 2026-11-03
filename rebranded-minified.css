@@ -729,6 +729,21 @@ textarea.form-control {
     color:var(--green-deep);
     box-shadow:var(--no-glow)
 }
+
+.form-error {
+    display: block;
+    max-height: 1.2rem;
+    color: red;
+    font-size: 0.75rem;
+    margin: 3px 0;
+
+}
+.form-error-message {
+    background-color:  rgba(239, 68, 68, 0.1);
+    border: 1px solid  rgba(239, 68, 68, 0.1);
+    border-radius: 5px;
+    color: red;
+}
 footer {
     background:var(--green-deep);
     color:#94A3B8;
@@ -982,3 +997,4 @@ footer {
         }
     }
 }
+

@@ -75,8 +75,6 @@
         <nav class="navbar">
 
             <a href="#" class="brand-logo">
-<!--                 <div class="logo-icon">CJ</div>
- -->
                 <div class="logo-text">
                     <span class="brand-name">C'J <span>CONSULTING</span></span>
                     <span class="brand-sub">INTEGRATED SERVICES</span>
@@ -85,8 +83,13 @@
 
 <aside id="aside">
     <div class="aside-header">
-                        <div class="logo-icon">CJ</div>
 
+            <a href="#" class="brand-logo">
+                <div class="logo-text">
+                    <span class="brand-name">C'J <span>CONSULTING</span></span>
+                    <span class="brand-sub">INTEGRATED SERVICES</span>
+                </div>
+            </a>
         <button type="button" id="close-menu" class="close-menu"><i class="fa-solid fa-x"></i></button>
     </div>
 
@@ -751,23 +754,20 @@
                         <div class="form-group">
 
                             <label for="fullName">Full Name *</label>
-
-                            <input type="text" id="fullName" class="form-control" placeholder="e.g. Chukwuma Adeleke" required>
-
+                            <input type="text" id="fullName" class="form-control" placeholder="e.g. Chukwuma Adeleke" required aria-describedby="name-error">
+                            <span class="form-error" id="name-error" aria-live="polite"></span>
                         </div>
 
                         <div class="form-group">
 
                             <label for="phoneNum">Phone Number / WhatsApp *</label>
-
                             <input type="tel" id="phoneNum" class="form-control" placeholder="e.g. 08012345678" required>
-
+                            <span class="form-error" id="number-error" aria-live="polite"></span>
                         </div>
 
                         <div class="form-group">
 
                             <label for="serviceSelect">Service Required *</label>
-
                             <select id="serviceSelect" class="form-control" required>
 
                                 <option value="" selected>-- Select a Service --</option>
@@ -847,8 +847,8 @@
                         <div class="form-group">
 
                             <label for="message">Message / Business Details</label>
-
                             <textarea id="message" class="form-control" placeholder="Tell us briefly what you need help with..."></textarea>
+                            <span class="form-error" id="message-error" aria-live="polite"></span>
 
                         </div>
 
@@ -1042,23 +1042,23 @@
 
                     <label for="modalName">Your Name</label>
 
-                    <input type="text" id="modalName" class="form-control" required placeholder="Enter your full name">
-
+                    <input type="text" id="modalName" class="form-control" required placeholder="Enter your full name" aria-describedby="modalName-error">
+                <span class="form-error" id="modalName-error" aria-live="polite"></span>
                 </div>
 
                 <div class="form-group">
 
                     <label for="modalPhone">Phone / WhatsApp Number</label>
-
-                    <input type="tel" id="modalPhone" class="form-control" required placeholder="Enter phone number">
-
+                    <input type="tel" id="modalPhone" class="form-control" required placeholder="Enter phone number" aria-describedby="modalPhone-error">
+                    <span class="form-error" id="modalPhone-error" aria-live="polite"></span>
                 </div>
 
                 <div class="form-group">
 
                     <label for="modalNotes">Additional Details (Optional)</label>
 
-                    <textarea id="modalNotes" class="form-control" placeholder="Tell us anything else we should know..."></textarea>
+                    <textarea id="modalNotes" class="form-control" placeholder="Tell us anything else we should know..." aria-describedby="modalMessage-error"></textarea>
+                    <span class="form-error" id="modalMessage-error" aria-live="polite"></span>
 
                 </div>
 
