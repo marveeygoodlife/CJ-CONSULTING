@@ -2,19 +2,17 @@
         // Hamburger Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('aside');
+const closeMenuBtn = document.getElementById("close-menu");
 
+/* open and close nav menu */
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-         /*    const icon = hamburger.querySelector('i');
-            if(navMenu.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            } */
         });
 
+//close menu on click of closeMenuBtn icon
+closeMenuBtn.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+})
         // Close menu on nav item click
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {

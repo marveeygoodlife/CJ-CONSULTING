@@ -932,7 +932,8 @@ footer {
         background:var(--green-main);
         padding:40px 20px;
         transition:var(--transition);
-        border-top:1px solid rgba(212,175,55,0.2)
+        border-top:1px solid rgba(212,175,55,0.2);
+        transition: left .3s ease-in-out;
     }
     aside.active {
         left:0
@@ -942,7 +943,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1rem;
+        padding: 12px;
         margin-bottom: 1rem;
 
         button {
@@ -956,6 +957,9 @@ footer {
         button:hover {
             color: var(--cream-dark);
         }
+    }
+ aside #navMenu {
+        flex-direction: column;
     }
     .hero-title {
         font-size:2.2rem
