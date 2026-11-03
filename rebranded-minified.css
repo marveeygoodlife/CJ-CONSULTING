@@ -24,12 +24,13 @@ body {
     background-color:var(--cream);
     color:var(--charcoal);
     line-height:1.6;
-    overflow-x:hidden
-}
+    overflow-x: clip;
+  }
 h1,h2,h3,.font-heading {
     font-family:'Playfair Display',serif;
     font-weight:600
 }
+ 
 .top-bar {
     background-color:var(--green-deep);
     color:#94A3B8;
@@ -67,8 +68,10 @@ h1,h2,h3,.font-heading {
 .navbar {
     background:var(--green-main);
     padding:15px 5%;
-    position:sticky;
+    position: sticky;
     top:0;
+    left: 0;
+    width: 100%;
     z-index:1000;
     box-shadow:0 4px 20px rgba(0,0,0,0.3);
     display:flex;
@@ -180,8 +183,7 @@ h1,h2,h3,.font-heading {
     color:#fff;
     padding:90px 5% 100px;
     position:relative;
-    overflow:hidden
-}
+ }
 .hero-container {
     max-width:1200px;
     margin:0 auto;
@@ -410,8 +412,7 @@ h1,h2,h3,.font-heading {
     flex-direction:column;
     justify-content:space-between;
     position:relative;
-    overflow:hidden
-}
+ }
 .service-card::before {
     content:'';
     position:absolute;
@@ -543,8 +544,7 @@ h1,h2,h3,.font-heading {
 .about-image {
     position:relative;
     border-radius:16px;
-    overflow:hidden;
-    box-shadow:var(--no-shadow)
+     box-shadow:var(--no-shadow)
 }
 .about-image img {
     width:100%;
@@ -610,8 +610,7 @@ h1,h2,h3,.font-heading {
     gap:40px;
     background:#FFFFFF;
     border-radius:5px;
-    overflow:hidden;
-    box-shadow:0 20px 40px rgba(0,0,0,0.06);
+     box-shadow:0 20px 40px rgba(0,0,0,0.06);
     border:1px solid #E9E4DA
 }
 .contact-info {
@@ -816,12 +815,14 @@ footer {
     right:25px;
     display:flex;
     flex-direction:column;
+    flex-wrap: wrap;
     gap:12px;
     z-index:999
 }
+
 .float-btn {
-    width:55px;
-    height:55px;
+    width:40px;
+    height:40px;
     border-radius:50%;
     display:flex;
     align-items:center;
@@ -911,6 +912,9 @@ footer {
 }
 .close-modal:hover {
     color:var(--green-main)
+}
+.topScroll-btn {
+    display: none;
 }
 @media (max-width:992px) {
     .hero-container {

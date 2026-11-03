@@ -9,6 +9,7 @@ const telephone = document.getElementById("phoneNum");
 const modalPhone = document.getElementById("modalPhone");
 const modalNotes = document.getElementById("modalNotes");
 const modalName = document.getElementById("modalName");
+const topScrollBtn = document.getElementById("topScroll-btn");
 
 /* open and close nav menu */
         hamburger.addEventListener('click', () => {
@@ -47,6 +48,20 @@ closeMenuBtn.addEventListener("click", () => {
                 }
             });
         });
+
+// scroll to top button
+topScrollBtn.addEventListener("click", () => {
+            window.scrollTo({top: 0, behavior: "smooth"})
+})
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 500) {
+			topScrollBtn.style.display = "block";
+		} else {
+			topScrollBtn.style.display = "none";
+		}
+});
+        
 
         // Service Filter by Category
         function filterCategory(category, btnElement) {
@@ -143,7 +158,6 @@ closeMenuBtn.addEventListener("click", () => {
 /* form validation */
         
 //helper function
-
 function addClass(input) {
     input.classList.add("form-error-message");
 }
